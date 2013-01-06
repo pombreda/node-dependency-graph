@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var _ = require('underscore').
+var _ = require('underscore'),
     fs = require('fs');
 
 var nano = require('nano')('http://localhost:5984');
@@ -21,6 +21,6 @@ registry.view('scratch', 'dependencies', function  (err, body) {
     return memo;
   }, {});
   console.log(allPackages);
-  fs.writeFileSync("./data.json", JSON.stringify(allPackages), 'utf8');
+  fs.writeFileSync("./all_data.json", JSON.stringify(allPackages), 'utf8');
   process.exit(0);
 });
